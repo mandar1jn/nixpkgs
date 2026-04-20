@@ -16,9 +16,12 @@ stdenv.mkDerivation (finalAttrs: {
 
   unpackCmd = "dpkg -x $curSrc source";
 
+  __structuredAttrs = true;
+  strictDeps = true;
   nativeBuildInputs = [
     dpkg
   ];
+
 
   installPhase = ''
     runHook preInstall
